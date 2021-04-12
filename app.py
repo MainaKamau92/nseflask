@@ -63,6 +63,9 @@ def live_stocks():
     except error.HTTPError:
         data = back_up_live_market()
         return dict(live_data=data)
+    except:
+        data = back_up_live_market()
+        return dict(live_data=data)
 
 
 @app.route('/stocks/<stock_date>')
